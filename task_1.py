@@ -17,14 +17,11 @@ class ExtendedCase(Case):
         self.precondition = precondition
         self.environment = environment
         super().__init__(test_case_id, name, step_description, expected_result)
-#2. Переопределяем метод print_test_case_info для подкласса.
+#2. Вызываем метод родителя, дописываем новые атрибуты подкласса.
     def print_test_case_info(self):
-        print(f"ID тест-кейса:  {self.test_case_id}"
-                      f"\nНазвание: {self.name}"
-                      f"\nОписание шага: {self.step_description}"
-                      f"\nОжидаемый результат: {self.expected_result}"
-                      f"\nПредусловие: {self.precondition}"
-                      f"\nОкружение: {self.environment}")
+        super().print_test_case_info()
+        print(f"Предусловие: {self.precondition}"
+              f"\nОкружение: {self.environment}")
 #3. Создаем объект.
 case = ExtendedCase('1', 'Наличие кнопки Принять', '1. Открыть вкладку приёма документов 2. Проверить наличие кнопки ', 'Кнопка доступна', 'Открыть сервис', 'Яндекс Браузер')
 

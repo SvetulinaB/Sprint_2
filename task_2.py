@@ -14,8 +14,8 @@ class Comedy(Movies):
 
 class Drama(Movies):
     def add_movie(self, movie):
-            super().add_movie(movie)
-            return f'Драмы: {self.movies}'
+        super().add_movie(movie)
+        return f'Драмы: {self.movies}'
 # 5 и 6. Создаем объекты, вызываем методы с входными параметрами.
 comedy = Comedy()
 print(comedy.add_movie('Большой куш'))
